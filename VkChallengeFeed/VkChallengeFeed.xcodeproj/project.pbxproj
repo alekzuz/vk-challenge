@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B72195598F004A569B /* AppDelegate.swift */; };
-		09E1F8BA2195598F004A569B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B92195598F004A569B /* ViewController.swift */; };
-		09E1F8BD2195598F004A569B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BB2195598F004A569B /* Main.storyboard */; };
+		09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B92195598F004A569B /* FeedViewController.swift */; };
+		09E1F8BD2195598F004A569B /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BB2195598F004A569B /* FeedViewController.storyboard */; };
 		09E1F8BF21955992004A569B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BE21955992004A569B /* Assets.xcassets */; };
 		09E1F8C221955992004A569B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8C021955992004A569B /* LaunchScreen.storyboard */; };
 		09E1F8FE219562A8004A569B /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; };
 		09E1F8FF219562A8004A569B /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21C9E91E2195B6320065B762 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E91D2195B6320065B762 /* AuthService.swift */; };
+		21C9E9242195CDEB0065B762 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9232195CDEB0065B762 /* AuthViewController.swift */; };
+		21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C9E9252195CE340065B762 /* AuthViewController.storyboard */; };
+		21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */; };
+		21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92B2195D2EF0065B762 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,12 +76,17 @@
 /* Begin PBXFileReference section */
 		09E1F8B42195598F004A569B /* VkChallengeFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkChallengeFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1F8B72195598F004A569B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09E1F8B92195598F004A569B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		09E1F8BC2195598F004A569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09E1F8B92195598F004A569B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		09E1F8BC2195598F004A569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FeedViewController.storyboard; sourceTree = "<group>"; };
 		09E1F8BE21955992004A569B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09E1F8C121955992004A569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E1F8C321955992004A569B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "../vk-ios-sdk/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		21C9E91D2195B6320065B762 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		21C9E9232195CDEB0065B762 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		21C9E9252195CE340065B762 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		21C9E92B2195D2EF0065B762 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				09E1F8B72195598F004A569B /* AppDelegate.swift */,
-				09E1F8B92195598F004A569B /* ViewController.swift */,
-				09E1F8BB2195598F004A569B /* Main.storyboard */,
+				21C9E9192195B60F0065B762 /* Services */,
+				21C9E91F2195C2240065B762 /* Scenes */,
+				21C9E92A2195CEAB0065B762 /* Helpers */,
 				09E1F8BE21955992004A569B /* Assets.xcassets */,
 				09E1F8C021955992004A569B /* LaunchScreen.storyboard */,
 				09E1F8C321955992004A569B /* Info.plist */,
@@ -130,6 +141,50 @@
 				09E1F8FD2195629D004A569B /* VKSdkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		21C9E9192195B60F0065B762 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21C9E91D2195B6320065B762 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		21C9E91F2195C2240065B762 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				21C9E9222195C6840065B762 /* Auth */,
+				21C9E9212195C2620065B762 /* Feed */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		21C9E9212195C2620065B762 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				09E1F8B92195598F004A569B /* FeedViewController.swift */,
+				09E1F8BB2195598F004A569B /* FeedViewController.storyboard */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		21C9E9222195C6840065B762 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				21C9E9232195CDEB0065B762 /* AuthViewController.swift */,
+				21C9E9252195CE340065B762 /* AuthViewController.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		21C9E92A2195CEAB0065B762 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */,
+				21C9E92B2195D2EF0065B762 /* GradientView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E1F8C221955992004A569B /* LaunchScreen.storyboard in Resources */,
+				21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */,
 				09E1F8BF21955992004A569B /* Assets.xcassets in Resources */,
-				09E1F8BD2195598F004A569B /* Main.storyboard in Resources */,
+				09E1F8BD2195598F004A569B /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E1F8BA2195598F004A569B /* ViewController.swift in Sources */,
+				21C9E9242195CDEB0065B762 /* AuthViewController.swift in Sources */,
+				21C9E91E2195B6320065B762 /* AuthService.swift in Sources */,
+				21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */,
+				09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */,
+				21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */,
 				09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,12 +318,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		09E1F8BB2195598F004A569B /* Main.storyboard */ = {
+		09E1F8BB2195598F004A569B /* FeedViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				09E1F8BC2195598F004A569B /* Base */,
 			);
-			name = Main.storyboard;
+			name = FeedViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		09E1F8C021955992004A569B /* LaunchScreen.storyboard */ = {

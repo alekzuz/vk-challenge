@@ -10,13 +10,25 @@ import UIKit
 import VKSdkFramework
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
 
     var window: UIWindow?
 
+	var authService: AuthService!
+	
+	static func shared() -> AppDelegate {
+		return UIApplication.shared.delegate as! AppDelegate
+	}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+		self.window = UIWindow()
+		self.authService = AuthService()
+		authService?.delegate = self
+		
+		let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
+		self.window?.rootViewController = authVC
+		self.window?.makeKeyAndVisible()
+		
         return true
     }
     
@@ -47,6 +59,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+	// MARK: - AuthServiceDelegate
+	
+	func authServiceShouldShow(_ viewController: UIViewController) {
+		window?.rootViewController?.present(viewController, animated: true, completion: nil)
+	}
+	
+	func authServiceDidSignIn() {
+		if !(window?.rootViewController is FeedViewController) {
+			window?.rootViewController = FeedViewController.loadFromStoryboard()
+		}
+	}
+	
+	func authServiceDidSignInFail() {
+		if !(window?.rootViewController is AuthViewController) {
+			window?.rootViewController = AuthViewController.loadFromStoryboard()
+		}
+	}
+	
 }
 
