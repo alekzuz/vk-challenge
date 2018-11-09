@@ -19,6 +19,8 @@
 		21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C9E9252195CE340065B762 /* AuthViewController.storyboard */; };
 		21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */; };
 		21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92B2195D2EF0065B762 /* GradientView.swift */; };
+		21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */; };
+		21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92F2195E84F0065B762 /* CustomLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		21C9E9252195CE340065B762 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		21C9E92B2195D2EF0065B762 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowAndCornersLayoutAttributes.swift; sourceTree = "<group>"; };
+		21C9E92F2195E84F0065B762 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 			children = (
 				21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */,
 				21C9E92B2195D2EF0065B762 /* GradientView.swift */,
+				21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */,
+				21C9E92F2195E84F0065B762 /* CustomLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 				21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */,
 				09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */,
 				21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */,
+				21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */,
+				21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */,
 				09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
