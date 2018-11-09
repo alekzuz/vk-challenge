@@ -1,0 +1,3 @@
+[submodule "vk-ios-sdk"]
+	path = vk-ios-sdk
+	url = https://github.com/VKCOM/vk-ios-sdk.git

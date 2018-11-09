@@ -12,42 +12,42 @@
 		09E1F8BD2195598F004A569B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BB2195598F004A569B /* Main.storyboard */; };
 		09E1F8BF21955992004A569B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BE21955992004A569B /* Assets.xcassets */; };
 		09E1F8C221955992004A569B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8C021955992004A569B /* LaunchScreen.storyboard */; };
-		09E1F8EA21955EF4004A569B /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8E721955EE9004A569B /* VKSdkFramework.framework */; };
-		09E1F8EB21955EF4004A569B /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8E721955EE9004A569B /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09E1F8FE219562A8004A569B /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; };
+		09E1F8FF219562A8004A569B /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		09E1F8E221955EE9004A569B /* PBXContainerItemProxy */ = {
+		09E1F8F62195629D004A569B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+			containerPortal = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F3C7542D182133CC00964716;
 			remoteInfo = VKSdk;
 		};
-		09E1F8E421955EE9004A569B /* PBXContainerItemProxy */ = {
+		09E1F8F82195629D004A569B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+			containerPortal = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F3BACC401865905B003158DA;
 			remoteInfo = VKSdkResources;
 		};
-		09E1F8E621955EE9004A569B /* PBXContainerItemProxy */ = {
+		09E1F8FA2195629D004A569B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+			containerPortal = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F34670311B8B7C5A003EF74B;
 			remoteInfo = VKSdkFramework;
 		};
-		09E1F8E821955EE9004A569B /* PBXContainerItemProxy */ = {
+		09E1F8FC2195629D004A569B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+			containerPortal = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F3C58CCD1D213B2C005E94B5;
 			remoteInfo = VKSdkTests;
 		};
-		09E1F8EC21955EF4004A569B /* PBXContainerItemProxy */ = {
+		09E1F900219562A8004A569B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+			containerPortal = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F34670301B8B7C5A003EF74B;
 			remoteInfo = VKSdkFramework;
@@ -61,7 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				09E1F8EB21955EF4004A569B /* VKSdkFramework.framework in Embed Frameworks */,
+				09E1F8FF219562A8004A569B /* VKSdkFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +76,7 @@
 		09E1F8BE21955992004A569B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09E1F8C121955992004A569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E1F8C321955992004A569B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "vk-ios-sdk/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "../vk-ios-sdk/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E1F8EA21955EF4004A569B /* VKSdkFramework.framework in Frameworks */,
+				09E1F8FE219562A8004A569B /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		09E1F8AB2195598F004A569B = {
 			isa = PBXGroup;
 			children = (
-				09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */,
+				09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */,
 				09E1F8B62195598F004A569B /* VkChallengeFeed */,
 				09E1F8B52195598F004A569B /* Products */,
 			);
@@ -121,13 +121,13 @@
 			path = VkChallengeFeed;
 			sourceTree = "<group>";
 		};
-		09E1F8DC21955EE9004A569B /* Products */ = {
+		09E1F8F02195629D004A569B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				09E1F8E321955EE9004A569B /* libVKSdk.a */,
-				09E1F8E521955EE9004A569B /* VKSdkResources.bundle */,
-				09E1F8E721955EE9004A569B /* VKSdkFramework.framework */,
-				09E1F8E921955EE9004A569B /* VKSdkTests.xctest */,
+				09E1F8F72195629D004A569B /* libVKSdk.a */,
+				09E1F8F92195629D004A569B /* VKSdkResources.bundle */,
+				09E1F8FB2195629D004A569B /* VKSdkFramework.framework */,
+				09E1F8FD2195629D004A569B /* VKSdkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				09E1F8ED21955EF4004A569B /* PBXTargetDependency */,
+				09E1F901219562A8004A569B /* PBXTargetDependency */,
 			);
 			name = VkChallengeFeed;
 			productName = VkChallengeFeed;
@@ -182,8 +182,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 09E1F8DC21955EE9004A569B /* Products */;
-					ProjectRef = 09E1F8DB21955EE9004A569B /* VK-ios-sdk.xcodeproj */;
+					ProductGroup = 09E1F8F02195629D004A569B /* Products */;
+					ProjectRef = 09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -194,32 +194,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		09E1F8E321955EE9004A569B /* libVKSdk.a */ = {
+		09E1F8F72195629D004A569B /* libVKSdk.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libVKSdk.a;
-			remoteRef = 09E1F8E221955EE9004A569B /* PBXContainerItemProxy */;
+			remoteRef = 09E1F8F62195629D004A569B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		09E1F8E521955EE9004A569B /* VKSdkResources.bundle */ = {
+		09E1F8F92195629D004A569B /* VKSdkResources.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = VKSdkResources.bundle;
-			remoteRef = 09E1F8E421955EE9004A569B /* PBXContainerItemProxy */;
+			remoteRef = 09E1F8F82195629D004A569B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		09E1F8E721955EE9004A569B /* VKSdkFramework.framework */ = {
+		09E1F8FB2195629D004A569B /* VKSdkFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = VKSdkFramework.framework;
-			remoteRef = 09E1F8E621955EE9004A569B /* PBXContainerItemProxy */;
+			remoteRef = 09E1F8FA2195629D004A569B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		09E1F8E921955EE9004A569B /* VKSdkTests.xctest */ = {
+		09E1F8FD2195629D004A569B /* VKSdkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = VKSdkTests.xctest;
-			remoteRef = 09E1F8E821955EE9004A569B /* PBXContainerItemProxy */;
+			remoteRef = 09E1F8FC2195629D004A569B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -250,10 +250,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		09E1F8ED21955EF4004A569B /* PBXTargetDependency */ = {
+		09E1F901219562A8004A569B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VKSdkFramework;
-			targetProxy = 09E1F8EC21955EF4004A569B /* PBXContainerItemProxy */;
+			targetProxy = 09E1F900219562A8004A569B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
