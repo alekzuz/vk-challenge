@@ -18,6 +18,13 @@ protocol FeedCellViewModel {
     var comments: String? { get }
     var shares: String? { get }
     var views: String? { get }
+    var photoAttachment: FeedCellPhotoAttachmentViewModel? { get }
+}
+
+protocol FeedCellPhotoAttachmentViewModel {
+    var photoUrlString: String? { get }
+    var width: Float { get }
+    var height: Float { get }
 }
 
 final class FeedCell: UITableViewCell {
@@ -29,6 +36,7 @@ final class FeedCell: UITableViewCell {
     @IBOutlet private var dateLabel: UILabel!
     @IBOutlet private var postLabel: UILabel!
     @IBOutlet private var moreTextButton: UIButton!
+    @IBOutlet private var photoImageView: WebImageView!
     @IBOutlet private var likesLabel: UILabel!
     @IBOutlet private var commentsLabel: UILabel!
     @IBOutlet private var sharesLabel: UILabel!
@@ -40,15 +48,29 @@ final class FeedCell: UITableViewCell {
         iconImageView.clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.set(imageUrl: nil)
+        photoImageView.set(imageUrl: nil)
+    }
+    
     func set(viewModel: FeedCellViewModel) {
         iconImageView.set(imageUrl: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
         postLabel.text = viewModel.text
+        if let photoAttachment = viewModel.photoAttachment {
+            photoImageView.set(imageUrl: photoAttachment.photoUrlString)
+            photoImageView.isHidden = false
+        } else {
+            photoImageView.isHidden = true
+        }
         likesLabel.text = viewModel.likes
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
     }
+    
+    
     
 }

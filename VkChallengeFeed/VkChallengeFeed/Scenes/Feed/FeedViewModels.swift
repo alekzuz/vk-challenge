@@ -16,11 +16,19 @@ enum Feed {
             let date: String
             let text: String?
             let moreTextTitle: String?
+            let photoAttachment: FeedCellPhotoAttachmentViewModel?
             let likes: String?
             let comments: String?
             let shares: String?
             let views: String?
         }
+        struct FeedCellPhotoAttachment: FeedCellPhotoAttachmentViewModel {
+            let photoUrlString: String?
+            let width: Float
+            let height: Float
+        }
+        
         let cells: [Cell]
     }
+    
 }

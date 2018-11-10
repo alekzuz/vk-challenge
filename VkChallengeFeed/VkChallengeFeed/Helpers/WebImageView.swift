@@ -13,11 +13,12 @@ final class WebImageView: UIImageView {
     private var currentUrlString: String?
     private let urlCache = URLCache.shared
     
-    func set(imageUrl: String) {
-        guard let url = URL(string: imageUrl) else {
+    func set(imageUrl: String?) {
+        currentUrlString = imageUrl
+        guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else {
+            self.image = nil
             return
         }
-        currentUrlString = imageUrl
         
         if let cachedResponse = urlCache.cachedResponse(for: URLRequest(url: url)) {
             self.image = UIImage(data: cachedResponse.data)

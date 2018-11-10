@@ -32,12 +32,14 @@ final class FeedPresenter: FeedPresentationLogic {
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> Feed.ViewModel.Cell {
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         let date = Date(timeIntervalSince1970: feedItem.date)
-        let dateTitle = dateFormatter.string(from: date)        
+        let dateTitle = dateFormatter.string(from: date)
+        let photoAttachment = self.photoAttachment(feedItem: feedItem)
         return Feed.ViewModel.Cell.init(iconUrlString: profile?.photo ?? "",
                                  name: profile?.name ?? "Noname",
                                  date: dateTitle,
                                  text: feedItem.text,
                                  moreTextTitle: "",
+                                 photoAttachment: photoAttachment,
                                  likes: formattedCounter(feedItem.likes?.count),
                                  comments: formattedCounter(feedItem.comments?.count),
                                  shares: formattedCounter(feedItem.reposts?.count),
@@ -53,5 +55,15 @@ final class FeedPresenter: FeedPresentationLogic {
     private func formattedCounter(_ counter: Int?) -> String? {
         guard let counter = counter, counter > 0  else { return nil }
         return String(counter)
+    }
+    
+    private func photoAttachment(feedItem: FeedItem) -> Feed.ViewModel.FeedCellPhotoAttachment? {
+        guard let photos = feedItem.attachments?.compactMap({ $0.photo }),
+            let firstPhoto = photos.first else {
+                return nil
+        }
+        return Feed.ViewModel.FeedCellPhotoAttachment.init(photoUrlString: firstPhoto.srcBig,
+                                                           width: firstPhoto.width,
+                                                           height: firstPhoto.height)
     }
 }
