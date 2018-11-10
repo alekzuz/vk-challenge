@@ -150,6 +150,7 @@
             <connections>
                 <outlet property="cardView" destination="gp0-Hk-Ekz" id="wYJ-oL-8UE"/>
                 <outlet property="commentsLabel" destination="WCv-UQ-k6o" id="TKx-El-MYL"/>
+                <outlet property="countersPlaceholder" destination="HPS-UB-o8G" id="OaB-DF-4cY"/>
                 <outlet property="dateLabel" destination="YPT-3N-LDj" id="deO-Su-Rjv"/>
                 <outlet property="iconImageView" destination="VvK-mm-M0q" id="fdv-1x-fV0"/>
                 <outlet property="likesLabel" destination="Y3c-YB-WEc" id="BSg-uG-XW1"/>

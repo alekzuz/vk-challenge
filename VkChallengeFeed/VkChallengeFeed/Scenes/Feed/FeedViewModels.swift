@@ -21,6 +21,7 @@ enum Feed {
             let comments: String?
             let shares: String?
             let views: String?
+            let sizes: FeedCellSizes
         }
         struct FeedCellPhotoAttachment: FeedCellPhotoAttachmentViewModel {
             let photoUrlString: String?

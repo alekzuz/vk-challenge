@@ -23,6 +23,8 @@
 		09E1F9152196B8B6004A569B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F9142196B8B6004A569B /* FeedCell.swift */; };
 		09E1F9172196BE2F004A569B /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F9162196BE2F004A569B /* FeedCell.xib */; };
 		09E1F91B2196F53B004A569B /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F91A2196F53B004A569B /* WebImageView.swift */; };
+		09E1F91F219763FD004A569B /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F91E219763FC004A569B /* String+Helpers.swift */; };
+		09E1F924219776A5004A569B /* FeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F923219776A5004A569B /* FeedCellLayoutCalculator.swift */; };
 		21C9E91E2195B6320065B762 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E91D2195B6320065B762 /* AuthService.swift */; };
 		21C9E9242195CDEB0065B762 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9232195CDEB0065B762 /* AuthViewController.swift */; };
 		21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C9E9252195CE340065B762 /* AuthViewController.storyboard */; };
@@ -102,6 +104,8 @@
 		09E1F9142196B8B6004A569B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		09E1F9162196BE2F004A569B /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		09E1F91A2196F53B004A569B /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		09E1F91E219763FC004A569B /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		09E1F923219776A5004A569B /* FeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		21C9E91D2195B6320065B762 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		21C9E9232195CDEB0065B762 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		21C9E9252195CE340065B762 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -176,8 +180,9 @@
 		09E1F9132196B4D4004A569B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				09E1F9142196B8B6004A569B /* FeedCell.swift */,
 				09E1F9162196BE2F004A569B /* FeedCell.xib */,
+				09E1F9142196B8B6004A569B /* FeedCell.swift */,
+				09E1F923219776A5004A569B /* FeedCellLayoutCalculator.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */,
 				21C9E92F2195E84F0065B762 /* CustomLayout.swift */,
 				09E1F91A2196F53B004A569B /* WebImageView.swift */,
+				09E1F91E219763FC004A569B /* String+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -349,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E1F9102196AFF6004A569B /* FeedPresenter.swift in Sources */,
+				09E1F924219776A5004A569B /* FeedCellLayoutCalculator.swift in Sources */,
 				21C9E9242195CDEB0065B762 /* AuthViewController.swift in Sources */,
 				21C9E91E2195B6320065B762 /* AuthService.swift in Sources */,
 				09E1F90E2196AFC9004A569B /* FeedInteractor.swift in Sources */,
+				09E1F91F219763FD004A569B /* String+Helpers.swift in Sources */,
 				21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */,
 				09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */,
 				09E1F9122196B3E5004A569B /* FeedViewModels.swift in Sources */,

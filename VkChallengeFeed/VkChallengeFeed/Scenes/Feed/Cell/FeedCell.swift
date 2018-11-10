@@ -19,6 +19,14 @@ protocol FeedCellViewModel {
     var shares: String? { get }
     var views: String? { get }
     var photoAttachment: FeedCellPhotoAttachmentViewModel? { get }
+    var sizes: FeedCellSizes { get }
+}
+
+protocol FeedCellSizes {
+    var postLabelFrame: CGRect { get }
+    var attachmentFrame: CGRect { get }
+    var counterPlaceholderFrame: CGRect { get }
+    var totalHeight: CGFloat { get }
 }
 
 protocol FeedCellPhotoAttachmentViewModel {
@@ -38,6 +46,7 @@ final class FeedCell: UITableViewCell {
     @IBOutlet private var postLabel: UILabel!
     @IBOutlet private var moreTextButton: UIButton!
     @IBOutlet private var photoImageView: WebImageView!
+    @IBOutlet private var countersPlaceholder: UIView!
     @IBOutlet private var likesLabel: UILabel!
     @IBOutlet private var commentsLabel: UILabel!
     @IBOutlet private var sharesLabel: UILabel!
@@ -72,7 +81,15 @@ final class FeedCell: UITableViewCell {
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
+        
+        
+        postLabel.frame = viewModel.sizes.postLabelFrame
+        photoImageView.frame = viewModel.sizes.attachmentFrame
+        countersPlaceholder.frame = viewModel.sizes.counterPlaceholderFrame
     }
+    
+    
+    // MARK: - Sizes calculation
     
     
     

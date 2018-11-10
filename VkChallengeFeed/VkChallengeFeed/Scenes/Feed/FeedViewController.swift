@@ -27,7 +27,9 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     }
     
     private func assemble() {
-        let presenter = FeedPresenter(viewController: self)
+        let screenWidth = min(UIScreen.main.bounds.width,  UIScreen.main.bounds.height)
+        let feedCellLayoutCalculator = FeedCellLayoutCalculator(screenWidth:screenWidth)
+        let presenter = FeedPresenter(viewController: self, cellLayoutCalculator: feedCellLayoutCalculator)
         let authService = AppDelegate.shared().authService!
         let networkService = NetworkService(authService: authService)
         interactor = FeedInteractor(presenter: presenter, networkService: networkService)
@@ -54,7 +56,8 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 212
+        let cellViewModel = viewModel.cells[indexPath.row]
+        return cellViewModel.sizes.totalHeight
     }
 }
 
