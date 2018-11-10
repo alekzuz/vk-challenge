@@ -14,11 +14,13 @@ struct FeedResponseWrapped: Decodable {
 
 struct FeedResponse: Decodable {
     let items: [FeedItem]
+    let profiles: [Profile]
+    let groups: [Group]
 }
 
 struct FeedItem: Decodable {
     let sourceId: Int
-    let date: Int
+    let date: Double
     let postId: Int?
     let text: String?
     let signerId: Int?
@@ -30,4 +32,30 @@ struct FeedItem: Decodable {
 
 struct CountableItem: Decodable {
     let count: Int
+}
+
+protocol ProfileRepresentable {
+    var id: Int { get }
+    var name: String { get }
+    var photo: String { get }
+}
+
+struct Profile: Decodable, ProfileRepresentable {
+    let uid: Int
+    let firstName: String
+    let lastName: String
+    let photoMediumRec: String
+    
+    var id: Int { return uid }
+    var name: String { return firstName + " " + lastName }
+    var photo: String { return photoMediumRec }
+}
+
+struct Group: Decodable, ProfileRepresentable {
+    let gid: Int
+    let name: String
+    let photoMedium: String
+    
+    var id: Int { return gid }
+    var photo: String { return photoMedium }
 }

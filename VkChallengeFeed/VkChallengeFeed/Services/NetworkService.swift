@@ -17,7 +17,7 @@ final class NetworkService {
     }
     
     func getFeed(completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
-        let params = ["filters": "post,photo,photo_tag,wall_photo"]
+        let params = ["filters": "post,photo"]
         sendDataRequest(path: API.newsFeed, params: params, completion: { (feed: FeedResponseWrapped) -> Void in
             completion(feed.response)
         }, failure: failure)
@@ -40,6 +40,8 @@ final class NetworkService {
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
+                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                    print("json \(json)")
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let decodedResponse = try decoder.decode(T.self, from: data)
                     DispatchQueue.main.async {

@@ -16,10 +16,10 @@ enum Feed {
             let date: String
             let text: String?
             let moreTextTitle: String?
-            let likes: String
-            let comments: String
-            let shares: String
-            let views: String
+            let likes: String?
+            let comments: String?
+            let shares: String?
+            let views: String?
         }
         let cells: [Cell]
     }
