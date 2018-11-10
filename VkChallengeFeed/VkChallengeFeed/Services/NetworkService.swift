@@ -18,7 +18,7 @@ final class NetworkService {
     
     func getFeed(completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
         let params = ["filters": "post,photo,photo_tag,wall_photo"]
-        sendDataRequest(path: API.newsFeed, params: params, completion: { (feed: Feed) -> Void in
+        sendDataRequest(path: API.newsFeed, params: params, completion: { (feed: FeedResponseWrapped) -> Void in
             completion(feed.response)
         }, failure: failure)
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Feed: Decodable {
+struct FeedResponseWrapped: Decodable {
     let response: FeedResponse
 }
 
@@ -25,6 +25,7 @@ struct FeedItem: Decodable {
     let comments: CountableItem?
     let likes: CountableItem?
     let reposts: CountableItem?
+    let views: CountableItem?
 }
 
 struct CountableItem: Decodable {

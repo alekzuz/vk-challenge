@@ -53,10 +53,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fka-6W-wUx" firstAttribute="leading" secondItem="fvI-DG-NlL" secondAttribute="leading" id="Jdw-L9-6hZ"/>
+                            <constraint firstItem="Fka-6W-wUx" firstAttribute="leading" secondItem="mgf-cS-9DJ" secondAttribute="leading" id="Jdw-L9-6hZ"/>
                             <constraint firstItem="ewM-c1-kBF" firstAttribute="centerX" secondItem="mgf-cS-9DJ" secondAttribute="centerX" id="PbL-UQ-jLJ"/>
                             <constraint firstItem="Fka-6W-wUx" firstAttribute="top" secondItem="mgf-cS-9DJ" secondAttribute="top" id="Sou-4V-QK3"/>
-                            <constraint firstItem="fvI-DG-NlL" firstAttribute="bottom" secondItem="Fka-6W-wUx" secondAttribute="bottom" id="Vtg-M0-21a"/>
+                            <constraint firstAttribute="bottom" secondItem="Fka-6W-wUx" secondAttribute="bottom" id="Vtg-M0-21a"/>
                             <constraint firstItem="ewM-c1-kBF" firstAttribute="centerY" secondItem="mgf-cS-9DJ" secondAttribute="centerY" id="eAZ-L5-auv"/>
                             <constraint firstAttribute="trailing" secondItem="Fka-6W-wUx" secondAttribute="trailing" id="pLw-jK-b0y"/>
                         </constraints>

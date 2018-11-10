@@ -30,19 +30,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVf-oR-niR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QVG-Mr-Cej"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rZM-Wv-tv8"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RVf-oR-niR" secondAttribute="trailing" id="AMo-6x-C03"/>
                             <constraint firstItem="ca7-SZ-G1u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Alg-9M-jXl"/>
+                            <constraint firstItem="RVf-oR-niR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CPH-I9-gge"/>
                             <constraint firstAttribute="bottom" secondItem="ca7-SZ-G1u" secondAttribute="bottom" id="OXQ-v1-HsS"/>
                             <constraint firstItem="ca7-SZ-G1u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qag-9S-xEg"/>
+                            <constraint firstItem="RVf-oR-niR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bfc-hh-YbA"/>
+                            <constraint firstAttribute="bottom" secondItem="RVf-oR-niR" secondAttribute="bottom" id="chZ-Fb-aLD"/>
                             <constraint firstAttribute="trailing" secondItem="ca7-SZ-G1u" secondAttribute="trailing" id="qtw-Df-LDs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="RVf-oR-niR" id="cpN-lF-nmC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>
