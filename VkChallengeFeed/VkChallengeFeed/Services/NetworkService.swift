@@ -28,7 +28,7 @@ final class NetworkService {
                                  completion: @escaping (T) -> Void,
                                  failure: @escaping () -> Void) {
         guard let token = authService.token else { return }
-        let session = URLSession.init(configuration: .default)
+        let session = URLSession(configuration: .default)
         
         var paramsWithTokenAndVerion = params
         paramsWithTokenAndVerion["access_token"] = token

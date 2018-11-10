@@ -33,7 +33,7 @@ final class FeedPresenter: FeedPresentationLogic {
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)        
-        return Feed.ViewModel.Cell.init(iconUrlString: "",
+        return Feed.ViewModel.Cell.init(iconUrlString: profile?.photo ?? "",
                                  name: profile?.name ?? "Noname",
                                  date: dateTitle,
                                  text: feedItem.text,
