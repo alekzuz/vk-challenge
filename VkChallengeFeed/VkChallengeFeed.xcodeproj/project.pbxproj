@@ -14,6 +14,9 @@
 		09E1F8C221955992004A569B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8C021955992004A569B /* LaunchScreen.storyboard */; };
 		09E1F8FE219562A8004A569B /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; };
 		09E1F8FF219562A8004A569B /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1F8FB2195629D004A569B /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09E1F90421962760004A569B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F90321962760004A569B /* NetworkService.swift */; };
+		09E1F90921962D54004A569B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F90821962D54004A569B /* API.swift */; };
+		09E1F90C21969BE9004A569B /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F90B21969BE9004A569B /* FeedResponse.swift */; };
 		21C9E91E2195B6320065B762 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E91D2195B6320065B762 /* AuthService.swift */; };
 		21C9E9242195CDEB0065B762 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9232195CDEB0065B762 /* AuthViewController.swift */; };
 		21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C9E9252195CE340065B762 /* AuthViewController.storyboard */; };
@@ -84,6 +87,9 @@
 		09E1F8C121955992004A569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E1F8C321955992004A569B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E1F8EF2195629D004A569B /* VK-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "VK-ios-sdk.xcodeproj"; path = "../vk-ios-sdk/VK-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		09E1F90321962760004A569B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		09E1F90821962D54004A569B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		09E1F90B21969BE9004A569B /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		21C9E91D2195B6320065B762 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		21C9E9232195CDEB0065B762 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		21C9E9252195CE340065B762 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -147,10 +153,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		09E1F90A21969BC9004A569B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09E1F90B21969BE9004A569B /* FeedResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		21C9E9192195B60F0065B762 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				09E1F90A21969BC9004A569B /* Models */,
 				21C9E91D2195B6320065B762 /* AuthService.swift */,
+				09E1F90321962760004A569B /* NetworkService.swift */,
+				09E1F90821962D54004A569B /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -308,7 +325,10 @@
 				21C9E91E2195B6320065B762 /* AuthService.swift in Sources */,
 				21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */,
 				09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */,
+				09E1F90921962D54004A569B /* API.swift in Sources */,
+				09E1F90421962760004A569B /* NetworkService.swift in Sources */,
 				21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */,
+				09E1F90C21969BE9004A569B /* FeedResponse.swift in Sources */,
 				21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */,
 				21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */,
 				09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */,

@@ -10,9 +10,18 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    private var networkService: NetworkService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let authService = AppDelegate.shared().authService!
+        networkService = NetworkService(authService: authService)
+        networkService.getFeed(completion: { (feedResponse) in
+            
+        }, failure: {
+            
+        })
     }
 
 
