@@ -34,6 +34,12 @@ final class FeedCell: UITableViewCell {
     @IBOutlet private var sharesLabel: UILabel!
     @IBOutlet private var viewsLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        iconImageView.layer.cornerRadius = iconImageView.frame.width/2
+        iconImageView.clipsToBounds = true
+    }
+    
     func set(viewModel: FeedCellViewModel) {
         iconImageView.set(imageUrl: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
