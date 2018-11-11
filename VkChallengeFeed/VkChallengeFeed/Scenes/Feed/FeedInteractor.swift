@@ -53,6 +53,7 @@ final class FeedInteractor: FeedBusinessLogic {
         guard newFromInProcess == nil else { return }
         newFromInProcess = feedResponse?.nextFrom
         
+        presenter.presentFooterLoader()
         networkService.getFeed(nextBatchFrom: feedResponse?.nextFrom, completion: { [weak self] feedResponse in
             self?.newFromInProcess = nil
             guard self?.feedResponse?.nextFrom != feedResponse.nextFrom else {

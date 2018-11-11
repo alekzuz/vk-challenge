@@ -11,6 +11,7 @@ import UIKit
 protocol FeedPresentationLogic: class {
     func presentUserInfo(_ userResponse: UserResponse?)
     func presentFeed(_ feedResponse: FeedResponse, revealedPostsIds: [Int])
+    func presentFooterLoader()
 }
 
 final class FeedPresenter: FeedPresentationLogic {
@@ -35,8 +36,14 @@ final class FeedPresenter: FeedPresentationLogic {
                                                            profiles: feedResponse.profiles,
                                                            groups: feedResponse.groups,
                                                            revealedPostsIds: revealedPostsIds) }
-        let viewModel = Feed.ViewModel.init(cells: cells)
+        
+        let footerTitle = String.localizedStringWithFormat(NSLocalizedString("record_count", comment: ""), cells.count)
+        let viewModel = Feed.ViewModel.init(cells: cells, footerTitle: footerTitle)
         viewController.displayViewModel(viewModel)
+    }
+    
+    func presentFooterLoader() {
+        viewController.displayFooterloader()
     }
     
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealedPostsIds: [Int]) -> Feed.ViewModel.Cell {

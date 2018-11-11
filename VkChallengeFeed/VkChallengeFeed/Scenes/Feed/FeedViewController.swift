@@ -11,16 +11,21 @@ import UIKit
 protocol FeedDisplayLogic: class {
     func displayUserVieModel(_ userViewModel: Feed.UserViewModel)
     func displayViewModel(_ viewModel: Feed.ViewModel)
+    func displayFooterloader()
 }
 
 final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewDelegate, UITableViewDataSource, FeedCellDelegate {
     private var interactor: FeedBusinessLogic!
-    private var viewModel = Feed.ViewModel.init(cells: [])
+    private var viewModel = Feed.ViewModel.init(cells: [], footerTitle: nil)
     
     @IBOutlet private var table: UITableView!
     
     private lazy var titleView: TitleView = {
        return TitleView.loadFromNib()
+    }()
+    
+    private lazy var footerView: FooterView = {
+        return FooterView.loadFromNib()
     }()
     
     private lazy var refreshControl: UIRefreshControl = {
@@ -36,6 +41,7 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         
         table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
         table.addSubview(refreshControl)
+        table.tableFooterView = footerView
         
         interactor.getUser()
         interactor.getFeed()
@@ -81,6 +87,11 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         self.viewModel = viewModel
         table.reloadData()
         refreshControl.endRefreshing()
+        footerView.setTitle(viewModel.footerTitle)
+    }
+    
+    func displayFooterloader() {
+        footerView.showLoader()
     }
     
     // MARK: - UITableViewDelegate & UITableViewDataSource

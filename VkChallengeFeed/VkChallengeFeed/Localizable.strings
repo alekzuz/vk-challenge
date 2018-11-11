@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  VkChallengeFeed
+
+  Created by Aleksei Sakharov on 11/11/2018.
+  Copyright © 2018 sakharov. All rights reserved.
+*/
+
+"record_count" = "record_count";

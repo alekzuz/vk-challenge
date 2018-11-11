@@ -36,6 +36,7 @@ enum Feed {
         }
         
         let cells: [Cell]
+        let footerTitle: String?
     }
     
 }

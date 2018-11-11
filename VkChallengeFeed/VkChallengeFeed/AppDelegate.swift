@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
 		let authVC: AuthViewController = AuthViewController.loadFromStoryboard()
 		self.window?.rootViewController = authVC
 		self.window?.makeKeyAndVisible()
-		
+    
         return true
     }
     
