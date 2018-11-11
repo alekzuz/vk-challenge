@@ -40,14 +40,15 @@ final class FeedPresenter: FeedPresentationLogic {
         let dateTitle = dateFormatter.string(from: date)
         let photoAttachments = self.photoAttachments(feedItem: feedItem)
         let isFullSized = revealedPostsIds.contains(feedItem.postId ?? 0)
-        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text,
+        let postText = feedItem.text?.replacingOccurrences(of: "<br>", with: "\n")
+        let sizes = cellLayoutCalculator.sizes(postText: postText,
                                                isFullSizedPost: isFullSized,
                                                photoAttachments: photoAttachments)
         return Feed.ViewModel.Cell.init(postId: feedItem.postId ?? 0,
                                         iconUrlString: profile?.photo ?? "",
                                  name: profile?.name ?? "Noname",
                                  date: dateTitle,
-                                 text: feedItem.text,                                 
+                                 text: postText,                                 
                                  photoAttachments: photoAttachments,
                                  likes: formattedCounter(feedItem.likes?.count),
                                  comments: formattedCounter(feedItem.comments?.count),
