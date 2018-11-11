@@ -91,8 +91,7 @@ final class FeedCell: UITableViewCell {
             photoImageView.frame = viewModel.sizes.attachmentFrame
             
             galleryView.isHidden = true
-        } else if viewModel.photoAttachments.count > 1 {
-            photoImageView.backgroundColor = UIColor.green
+        } else if viewModel.photoAttachments.count > 1 {            
             photoImageView.frame = viewModel.sizes.attachmentFrame
             
             galleryView.isHidden = false

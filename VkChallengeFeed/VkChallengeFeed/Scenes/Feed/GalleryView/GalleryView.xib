@@ -28,7 +28,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WOB-Ie-Xjs">
-                    <rect key="frame" x="16" y="263" width="343" height="37"/>
+                    <rect key="frame" x="0.0" y="263" width="375" height="37"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </pageControl>
