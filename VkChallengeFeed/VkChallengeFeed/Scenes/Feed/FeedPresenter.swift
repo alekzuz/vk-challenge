@@ -77,7 +77,13 @@ final class FeedPresenter: FeedPresentationLogic {
 
     private func formattedCounter(_ counter: Int?) -> String? {
         guard let counter = counter, counter > 0  else { return nil }
-        return String(counter)
+        var counterString = String(counter)
+        if 4...6 ~= counterString.count {
+            counterString = String(counterString.dropLast(3)) + "К"
+        } else if counterString.count > 6 {
+            counterString = String(counterString.dropLast(6)) + "М"
+        }        
+        return counterString
     }
     
     private func photoAttachments(feedItem: FeedItem) -> [Feed.ViewModel.FeedCellPhotoAttachment] {
@@ -89,4 +95,5 @@ final class FeedPresenter: FeedPresentationLogic {
                                                         height: photo.height)
         })
     }
+    
 }
