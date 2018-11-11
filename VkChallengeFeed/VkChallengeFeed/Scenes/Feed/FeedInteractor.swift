@@ -10,11 +10,15 @@ import Foundation
 
 protocol FeedBusinessLogic: class {
     func getFeed()
+    func revealPost(for postId: Int)
 }
 
 final class FeedInteractor: FeedBusinessLogic {
     private let presenter: FeedPresentationLogic
     private let networkService: NetworkService
+    
+    private var feedResponse: FeedResponse?
+    private var revealedPostsIds = [Int]()
     
     init(presenter: FeedPresentationLogic, networkService: NetworkService) {
         self.presenter = presenter
@@ -23,10 +27,20 @@ final class FeedInteractor: FeedBusinessLogic {
     
     func getFeed() {
         networkService.getFeed(completion: { [weak self] feedResponse in
-            self?.presenter.presentFeed(feedResponse)
+            self?.feedResponse = feedResponse
+            self?.presentFeed()
         }, failure: {
             //todo
         })
     }
     
+    func revealPost(for postId: Int) {
+        revealedPostsIds.append(postId)
+        presentFeed()
+    }
+    
+    private func presentFeed() {
+        guard let feedResponse = feedResponse else { return }
+        presenter.presentFeed(feedResponse, revealedPostsIds: revealedPostsIds)
+    }
 }

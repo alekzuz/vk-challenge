@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FeedPresentationLogic: class {
-    func presentFeed(_ feedResponse: FeedResponse)
+    func presentFeed(_ feedResponse: FeedResponse, revealedPostsIds: [Int])
 }
 
 final class FeedPresenter: FeedPresentationLogic {
@@ -25,24 +25,29 @@ final class FeedPresenter: FeedPresentationLogic {
         dateFormatter.dateFormat = "d MMM 'в' HH:mm"
     }
     
-    func presentFeed(_ feedResponse: FeedResponse) {
-        let cells = feedResponse.items.map { cellViewModel(from: $0, profiles: feedResponse.profiles, groups: feedResponse.groups) }
+    func presentFeed(_ feedResponse: FeedResponse, revealedPostsIds: [Int]) {
+        let cells = feedResponse.items.map { cellViewModel(from: $0,
+                                                           profiles: feedResponse.profiles,
+                                                           groups: feedResponse.groups,
+                                                           revealedPostsIds: revealedPostsIds) }
         let viewModel = Feed.ViewModel.init(cells: cells)
         viewController.displayViewModel(viewModel)
     }
     
-    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> Feed.ViewModel.Cell {
+    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealedPostsIds: [Int]) -> Feed.ViewModel.Cell {
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
         let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        let isFullSized = revealedPostsIds.contains(feedItem.postId)
         let sizes = cellLayoutCalculator.sizes(postText: feedItem.text,
+                                               isFullSizedPost: isFullSized,
                                                photoAttachment: photoAttachment)
-        return Feed.ViewModel.Cell.init(iconUrlString: profile?.photo ?? "",
+        return Feed.ViewModel.Cell.init(postId: feedItem.postId,
+                                        iconUrlString: profile?.photo ?? "",
                                  name: profile?.name ?? "Noname",
                                  date: dateTitle,
-                                 text: feedItem.text,
-                                 moreTextTitle: "",
+                                 text: feedItem.text,                                 
                                  photoAttachment: photoAttachment,
                                  likes: formattedCounter(feedItem.likes?.count),
                                  comments: formattedCounter(feedItem.comments?.count),

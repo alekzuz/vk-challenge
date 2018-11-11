@@ -12,7 +12,7 @@ protocol FeedDisplayLogic: class {
     func displayViewModel(_ viewModel: Feed.ViewModel)
 }
 
-final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewDelegate, UITableViewDataSource {
+final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewDelegate, UITableViewDataSource, FeedCellDelegate {
     private var interactor: FeedBusinessLogic!
     private var viewModel = Feed.ViewModel.init(cells: [])
     
@@ -52,6 +52,7 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedCell.reuseId, for: indexPath) as! FeedCell
         let cellViewModel = viewModel.cells[indexPath.row]
         cell.set(viewModel: cellViewModel)
+        cell.delegate = self
         return cell
     }
 
@@ -59,5 +60,19 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         let cellViewModel = viewModel.cells[indexPath.row]
         return cellViewModel.sizes.totalHeight
     }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellViewModel = viewModel.cells[indexPath.row]
+        return cellViewModel.sizes.totalHeight
+    }
+    
+    // MARK: - FeedCellDelegate
+    
+    func revealPost(for cell: FeedCell) {
+        guard let indexPath = table.indexPath(for: cell) else { return }
+        let cellViewModel = viewModel.cells[indexPath.row]
+        interactor.revealPost(for: cellViewModel.postId)
+    }
+    
 }
 

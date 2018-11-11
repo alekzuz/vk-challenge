@@ -12,8 +12,7 @@ protocol FeedCellViewModel {
     var iconUrlString: String { get }
     var name: String { get }
     var date: String { get }
-    var text: String? { get }
-    var moreTextTitle: String? { get }
+    var text: String? { get }    
     var likes: String? { get }
     var comments: String? { get }
     var shares: String? { get }
@@ -24,6 +23,7 @@ protocol FeedCellViewModel {
 
 protocol FeedCellSizes {
     var postLabelFrame: CGRect { get }
+    var moreTextButtonFrame: CGRect { get }
     var attachmentFrame: CGRect { get }
     var counterPlaceholderFrame: CGRect { get }
     var totalHeight: CGFloat { get }
@@ -33,6 +33,10 @@ protocol FeedCellPhotoAttachmentViewModel {
     var photoUrlString: String? { get }
     var width: Float { get }
     var height: Float { get }
+}
+
+protocol FeedCellDelegate: class {
+    func revealPost(for cell:FeedCell)
 }
 
 final class FeedCell: UITableViewCell {
@@ -51,6 +55,8 @@ final class FeedCell: UITableViewCell {
     @IBOutlet private var commentsLabel: UILabel!
     @IBOutlet private var sharesLabel: UILabel!
     @IBOutlet private var viewsLabel: UILabel!
+    
+    weak var delegate: FeedCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -84,13 +90,13 @@ final class FeedCell: UITableViewCell {
         
         
         postLabel.frame = viewModel.sizes.postLabelFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         photoImageView.frame = viewModel.sizes.attachmentFrame
         countersPlaceholder.frame = viewModel.sizes.counterPlaceholderFrame
     }
     
-    
-    // MARK: - Sizes calculation
-    
-    
+    @IBAction private func moreTextButtonTouch() {
+        delegate?.revealPost(for: self)
+    }
     
 }

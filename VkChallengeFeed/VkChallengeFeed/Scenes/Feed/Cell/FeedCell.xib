@@ -55,6 +55,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-nG-B3e">
+                                <rect key="frame" x="12" y="85" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Показать полностью...">
+                                    <color key="titleColor" red="0.33333333333333331" green="0.5490196078431373" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreTextButtonTouch" destination="Ysb-oV-kvn" eventType="touchUpInside" id="VpW-zj-peh"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFq-LA-aeg" customClass="WebImageView" customModule="VkChallengeFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104" width="359" height="52"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -154,6 +165,7 @@
                 <outlet property="dateLabel" destination="YPT-3N-LDj" id="deO-Su-Rjv"/>
                 <outlet property="iconImageView" destination="VvK-mm-M0q" id="fdv-1x-fV0"/>
                 <outlet property="likesLabel" destination="Y3c-YB-WEc" id="BSg-uG-XW1"/>
+                <outlet property="moreTextButton" destination="QWw-nG-B3e" id="zHc-YI-5Q2"/>
                 <outlet property="nameLabel" destination="PZU-R1-rO3" id="9nl-Mz-WiA"/>
                 <outlet property="photoImageView" destination="xFq-LA-aeg" id="3DQ-Pg-TqZ"/>
                 <outlet property="postLabel" destination="7p4-JT-S5P" id="zuF-eG-enI"/>

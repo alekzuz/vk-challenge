@@ -11,11 +11,12 @@ import Foundation
 enum Feed {
     struct ViewModel {
         struct Cell: FeedCellViewModel {
+            let postId: Int
+            
             let iconUrlString: String
             let name: String
             let date: String
-            let text: String?
-            let moreTextTitle: String?
+            let text: String?            
             let photoAttachment: FeedCellPhotoAttachmentViewModel?
             let likes: String?
             let comments: String?
