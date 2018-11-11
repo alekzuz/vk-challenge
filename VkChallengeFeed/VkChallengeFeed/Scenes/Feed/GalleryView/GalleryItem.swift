@@ -18,4 +18,8 @@ final class GalleryItem: UICollectionViewCell {
         imageView.set(imageUrl: imageUrl)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 }

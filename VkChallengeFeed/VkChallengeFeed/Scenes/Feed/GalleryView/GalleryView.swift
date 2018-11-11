@@ -38,6 +38,8 @@ final class GalleryView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     func set(photos: [FeedCellPhotoAttachmentViewModel]) {
         self.photos = photos
         pageControl.numberOfPages = photos.count
+        pageControl.currentPage = 0
+        collectionView.contentOffset = CGPoint.zero
         collectionView.reloadData()
     }
     
