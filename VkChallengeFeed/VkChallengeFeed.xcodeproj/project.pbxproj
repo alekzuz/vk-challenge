@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09112C7C219857F200C9C4E1 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112C7B219857F200C9C4E1 /* TitleView.swift */; };
+		09112C7E2198583100C9C4E1 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09112C7D2198583100C9C4E1 /* TitleView.xib */; };
+		09112C802198600500C9C4E1 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112C7F2198600500C9C4E1 /* InsetableTextField.swift */; };
 		09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B72195598F004A569B /* AppDelegate.swift */; };
 		09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B92195598F004A569B /* FeedViewController.swift */; };
 		09E1F8BD2195598F004A569B /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BB2195598F004A569B /* FeedViewController.storyboard */; };
@@ -92,6 +95,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09112C7B219857F200C9C4E1 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		09112C7D2198583100C9C4E1 /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		09112C7F2198600500C9C4E1 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		09E1F8B42195598F004A569B /* VkChallengeFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkChallengeFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1F8B72195598F004A569B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E1F8B92195598F004A569B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +143,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09112C77219857C500C9C4E1 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				09112C7B219857F200C9C4E1 /* TitleView.swift */,
+				09112C7D2198583100C9C4E1 /* TitleView.xib */,
+				09112C7F2198600500C9C4E1 /* InsetableTextField.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		09E1F8AB2195598F004A569B = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +247,7 @@
 		21C9E9212195C2620065B762 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				09112C77219857C500C9C4E1 /* TitleView */,
 				09E1F92521981484004A569B /* GalleryView */,
 				09E1F9132196B4D4004A569B /* Cell */,
 				09E1F8BB2195598F004A569B /* FeedViewController.storyboard */,
@@ -365,6 +382,7 @@
 				09E1F8C221955992004A569B /* LaunchScreen.storyboard in Resources */,
 				21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */,
 				09E1F8BF21955992004A569B /* Assets.xcassets in Resources */,
+				09112C7E2198583100C9C4E1 /* TitleView.xib in Resources */,
 				09E1F92B21981A28004A569B /* GalleryItem.xib in Resources */,
 				09E1F8BD2195598F004A569B /* FeedViewController.storyboard in Resources */,
 				09E1F9172196BE2F004A569B /* FeedCell.xib in Resources */,
@@ -387,6 +405,7 @@
 				09E1F91F219763FD004A569B /* String+Helpers.swift in Sources */,
 				21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */,
 				09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */,
+				09112C802198600500C9C4E1 /* InsetableTextField.swift in Sources */,
 				09E1F9122196B3E5004A569B /* FeedViewModels.swift in Sources */,
 				09E1F90921962D54004A569B /* API.swift in Sources */,
 				09E1F90421962760004A569B /* NetworkService.swift in Sources */,
@@ -398,6 +417,7 @@
 				21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */,
 				09E1F927219817F3004A569B /* GalleryView.swift in Sources */,
 				21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */,
+				09112C7C219857F200C9C4E1 /* TitleView.swift in Sources */,
 				09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */,
 				09E1F92F21982097004A569B /* UIView+Nib.swift in Sources */,
 			);

@@ -21,6 +21,8 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         assemble()
+        setupTopBars()
+        
         table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
         
         interactor.getFeed()
@@ -35,6 +37,22 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         interactor = FeedInteractor(presenter: presenter, networkService: networkService)
     }
 
+    private func setupTopBars() {
+        self.navigationController?.hidesBarsOnSwipe = true
+        let topBar = UIView(frame: UIApplication.shared.statusBarFrame)
+        topBar.backgroundColor = UIColor.white
+        topBar.layer.shadowColor = UIColor.black.cgColor
+        topBar.layer.shadowOpacity = 0.1
+        topBar.layer.shadowOffset = CGSize.zero
+        topBar.layer.shadowRadius = 8
+        self.view.addSubview(topBar)
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        let titleView: TitleView = TitleView.loadFromNib()
+        self.navigationItem.titleView = titleView
+    }
+    
     // MARK: - FeedDisplayLogic
     
     func displayViewModel(_ viewModel: Feed.ViewModel) {

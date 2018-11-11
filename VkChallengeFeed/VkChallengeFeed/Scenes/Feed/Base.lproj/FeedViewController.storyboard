@@ -30,7 +30,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVf-oR-niR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVf-oR-niR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -46,8 +46,8 @@
                             <constraint firstItem="RVf-oR-niR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CPH-I9-gge"/>
                             <constraint firstAttribute="bottom" secondItem="ca7-SZ-G1u" secondAttribute="bottom" id="OXQ-v1-HsS"/>
                             <constraint firstItem="ca7-SZ-G1u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qag-9S-xEg"/>
-                            <constraint firstItem="RVf-oR-niR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bfc-hh-YbA"/>
                             <constraint firstAttribute="bottom" secondItem="RVf-oR-niR" secondAttribute="bottom" id="chZ-Fb-aLD"/>
+                            <constraint firstItem="RVf-oR-niR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lpU-ex-kZU"/>
                             <constraint firstAttribute="trailing" secondItem="ca7-SZ-G1u" secondAttribute="trailing" id="qtw-Df-LDs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

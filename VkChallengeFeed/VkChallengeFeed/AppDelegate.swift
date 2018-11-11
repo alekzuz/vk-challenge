@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
 		return UIApplication.shared.delegate as! AppDelegate
 	}
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {                
+        
 		self.window = UIWindow()
 		self.authService = AuthService()
 		authService?.delegate = self
@@ -67,7 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
 	
 	func authServiceDidSignIn() {
 		if !(window?.rootViewController is FeedViewController) {
-			window?.rootViewController = FeedViewController.loadFromStoryboard()
+            let feedVC = FeedViewController.loadFromStoryboard()
+            let navVC = UINavigationController(rootViewController: feedVC)
+			window?.rootViewController = navVC
 		}
 	}
 	
