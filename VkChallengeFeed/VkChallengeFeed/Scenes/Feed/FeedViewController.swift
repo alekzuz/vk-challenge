@@ -118,7 +118,9 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     // MARK: - ScrollDelegate
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView.contentOffset.y > scrollView.contentSize.height / 2 {
+        let scrollFrameHeight = scrollView.frame.size.height
+        let maxOffset = scrollView.contentSize.height - scrollFrameHeight
+        if maxOffset - scrollView.contentOffset.y < scrollFrameHeight * 2 {
             interactor.getNextBatch()
         }
     }
