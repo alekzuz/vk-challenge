@@ -17,7 +17,7 @@ protocol FeedCellViewModel {
     var comments: String? { get }
     var shares: String? { get }
     var views: String? { get }
-    var photoAttachment: FeedCellPhotoAttachmentViewModel? { get }
+    var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
     var sizes: FeedCellSizes { get }
 }
 
@@ -25,6 +25,7 @@ protocol FeedCellSizes {
     var postLabelFrame: CGRect { get }
     var moreTextButtonFrame: CGRect { get }
     var attachmentFrame: CGRect { get }
+    var galleryItemSize: CGSize { get }
     var counterPlaceholderFrame: CGRect { get }
     var totalHeight: CGFloat { get }
 }
@@ -50,6 +51,7 @@ final class FeedCell: UITableViewCell {
     @IBOutlet private var postLabel: UILabel!
     @IBOutlet private var moreTextButton: UIButton!
     @IBOutlet private var photoImageView: WebImageView!
+    private var galleryView: GalleryView!
     @IBOutlet private var countersPlaceholder: UIView!
     @IBOutlet private var likesLabel: UILabel!
     @IBOutlet private var commentsLabel: UILabel!
@@ -64,6 +66,8 @@ final class FeedCell: UITableViewCell {
         cardView.clipsToBounds = true
         iconImageView.layer.cornerRadius = iconImageView.frame.width/2
         iconImageView.clipsToBounds = true
+        galleryView = GalleryView.loadFromNib()
+        cardView.addSubview(galleryView)
     }
     
     override func prepareForReuse() {
@@ -77,21 +81,35 @@ final class FeedCell: UITableViewCell {
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
         postLabel.text = viewModel.text
-        if let photoAttachment = viewModel.photoAttachment {
+        postLabel.frame = viewModel.sizes.postLabelFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
+        
+        // сорян за говнокод, времени очень мало =(
+        if let photoAttachment = viewModel.photoAttachments.first, viewModel.photoAttachments.count == 1 {
             photoImageView.set(imageUrl: photoAttachment.photoUrlString)
             photoImageView.isHidden = false
+            photoImageView.frame = viewModel.sizes.attachmentFrame
+            
+            galleryView.isHidden = true
+        } else if viewModel.photoAttachments.count > 1 {
+            photoImageView.backgroundColor = UIColor.green
+            photoImageView.frame = viewModel.sizes.attachmentFrame
+            
+            galleryView.isHidden = false
+            galleryView.frame = viewModel.sizes.attachmentFrame
+            
+            galleryView.setItemSize(viewModel.sizes.galleryItemSize)
+            galleryView.set(photos: viewModel.photoAttachments)
         } else {
             photoImageView.isHidden = true
+            galleryView.isHidden = true
         }
+        
         likesLabel.text = viewModel.likes
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
         
-        
-        postLabel.frame = viewModel.sizes.postLabelFrame
-        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
-        photoImageView.frame = viewModel.sizes.attachmentFrame
         countersPlaceholder.frame = viewModel.sizes.counterPlaceholderFrame
     }
     

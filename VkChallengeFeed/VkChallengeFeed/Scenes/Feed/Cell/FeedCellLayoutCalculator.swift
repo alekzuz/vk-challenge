@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FeedCellLayoutCalculatorProtocol {
-    func sizes(postText: String?, isFullSizedPost: Bool, photoAttachment: FeedCellPhotoAttachmentViewModel?) -> FeedCellSizes
+    func sizes(postText: String?, isFullSizedPost: Bool, photoAttachments: [FeedCellPhotoAttachmentViewModel]) -> FeedCellSizes
 }
 
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
@@ -28,6 +28,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         let postLabelFrame: CGRect
         let moreTextButtonFrame: CGRect
         let attachmentFrame: CGRect
+        let galleryItemSize: CGSize
         let counterPlaceholderFrame: CGRect
         let totalHeight: CGFloat
     }
@@ -39,7 +40,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         self.screenWidth = screenWidth
     }
     
-    func sizes(postText: String?, isFullSizedPost: Bool, photoAttachment: FeedCellPhotoAttachmentViewModel?) -> FeedCellSizes  {
+    func sizes(postText: String?, isFullSizedPost: Bool, photoAttachments: [FeedCellPhotoAttachmentViewModel]) -> FeedCellSizes  {
         let fittingWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
         
         var showMoreTextButton = false
@@ -66,9 +67,18 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         
         let attachmentTop = postLabelFrame.size == CGSize.zero ? Constants.postLabelInsets.top : moreTextButtonFrame.maxY + Constants.postLabelInsets.bottom
         var attachmentFrame = CGRect(origin: CGPoint(x: 0, y: attachmentTop), size: CGSize.zero)
-        if let attachment = photoAttachment {
+        var galleryItemSize = CGSize.zero
+        if let attachment = photoAttachments.first {
             let ratio = CGFloat(attachment.height / attachment.width)
-            attachmentFrame.size = CGSize(width: fittingWidth, height: fittingWidth * ratio)
+            if photoAttachments.count == 1 {
+                attachmentFrame.size = CGSize(width: fittingWidth, height: fittingWidth * ratio)
+            } else {
+                let itemWidth = fittingWidth - GalleryView.Constants.itemSideInset * 2
+                let itemHeight = itemWidth * ratio
+                galleryItemSize = CGSize(width: itemWidth, height: itemHeight)
+                let attachmentHeight = itemWidth * ratio + GalleryView.Constants.pageControlHeight
+                attachmentFrame.size = CGSize(width: fittingWidth, height: attachmentHeight)
+            }
         }
         
         let counterPlaceholderFrame = CGRect(x: 0,
@@ -81,6 +91,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
         return Sizes(postLabelFrame: postLabelFrame,
                      moreTextButtonFrame: moreTextButtonFrame,
                      attachmentFrame: attachmentFrame,
+                     galleryItemSize: galleryItemSize,
                      counterPlaceholderFrame: counterPlaceholderFrame,
                      totalHeight: totalHeight)
     }

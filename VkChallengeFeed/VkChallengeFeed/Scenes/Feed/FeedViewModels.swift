@@ -17,7 +17,7 @@ enum Feed {
             let name: String
             let date: String
             let text: String?            
-            let photoAttachment: FeedCellPhotoAttachmentViewModel?
+            let photoAttachments: [FeedCellPhotoAttachmentViewModel]
             let likes: String?
             let comments: String?
             let shares: String?
