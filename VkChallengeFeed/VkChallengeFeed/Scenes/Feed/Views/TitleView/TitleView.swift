@@ -12,10 +12,17 @@ protocol TitleViewViewModel {
     var photoUrlString: String? { get }
 }
 
-final class TitleView: UIView {
+protocol TitleViewDelegate: class {
+    func titleViewFieldDidChangeText(_ newText: String?)
+    func titleViewFieldDidFinish()
+}
+
+final class TitleView: UIView, UITextFieldDelegate {
 
     @IBOutlet private var textField: UITextField!
     @IBOutlet private var avatarView: WebImageView!
+    
+    weak var delegate: TitleViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +35,8 @@ final class TitleView: UIView {
         textField.leftView = UIImageView(image: image)
         textField.leftView?.frame = CGRect(x: 0, y: 0, width: 14, height: 14)
         textField.leftViewMode = .always
+        textField.addTarget(self, action: #selector(texFieldDidChange), for: .editingChanged)
+        textField.delegate = self
         
         avatarView.layer.cornerRadius = avatarView.frame.width/2
         avatarView.clipsToBounds = true
@@ -39,6 +48,21 @@ final class TitleView: UIView {
     
     func set(userViewModel: TitleViewViewModel) {
         avatarView.set(imageUrl: userViewModel.photoUrlString)
+    }
+    
+    @objc private func texFieldDidChange() {
+        delegate?.titleViewFieldDidChangeText(textField.text)
+    }
+    
+    // MARK: - TextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        avatarView.isHidden = true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        avatarView.isHidden = false
+        delegate?.titleViewFieldDidFinish()
     }
     
 }

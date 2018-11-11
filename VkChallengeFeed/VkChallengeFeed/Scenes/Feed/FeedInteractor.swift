@@ -12,6 +12,7 @@ protocol FeedBusinessLogic: class {
     func getUser()
     func getFeed()
     func getNextBatch()
+    func search(_ text: String)
     func revealPost(for postId: Int)
 }
 
@@ -44,8 +45,9 @@ final class FeedInteractor: FeedBusinessLogic {
         networkService.getFeed(completion: { [weak self] feedResponse in
             self?.feedResponse = feedResponse
             self?.presentFeed()
-        }, failure: {
-            //todo
+        }, failure: { [weak self] in
+            //todo: present error
+            self?.presentFeed()
         })
     }
     
@@ -62,9 +64,14 @@ final class FeedInteractor: FeedBusinessLogic {
             self?.mergeResponse(feedResponse)
             self?.presentFeed()
         }, failure: { [weak self] in
-                self?.newFromInProcess = nil
-                //todo
+            self?.newFromInProcess = nil
+            //todo: present error
+            self?.presentFeed()
         })
+    }
+    
+    func search(_ text: String) {
+
     }
     
     func revealPost(for postId: Int) {

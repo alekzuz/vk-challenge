@@ -14,14 +14,16 @@ protocol FeedDisplayLogic: class {
     func displayFooterloader()
 }
 
-final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewDelegate, UITableViewDataSource, FeedCellDelegate {
+final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewDelegate, UITableViewDataSource, FeedCellDelegate, TitleViewDelegate {
     private var interactor: FeedBusinessLogic!
     private var viewModel = Feed.ViewModel.init(cells: [], footerTitle: nil)
     
     @IBOutlet private var table: UITableView!
     
     private lazy var titleView: TitleView = {
-       return TitleView.loadFromNib()
+        let titleView: TitleView = TitleView.loadFromNib()
+        titleView.delegate = self
+        return titleView
     }()
     
     private lazy var footerView: FooterView = {
@@ -146,6 +148,22 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         if maxOffset - scrollView.contentOffset.y < scrollFrameHeight * 2 {
             interactor.getNextBatch()
         }
+    }
+    
+    // MARK: - TitleViewDelegate
+    
+    func titleViewFieldDidChangeText(_ newText: String?) {
+        print("\(#function) \(newText)")
+        if let text = newText {
+            interactor.search(text)
+        } else {
+            interactor.getFeed()
+        }
+        
+    }
+    
+    func titleViewFieldDidFinish() {
+        print("\(#function)")
     }
     
 }

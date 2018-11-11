@@ -32,6 +32,18 @@ final class NetworkService {
         }, failure: failure)
     }
     
+    func search(text: String, nextBatchFrom: String? = nil, completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
+        guard let excapedText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            failure()
+            return
+        }
+        var params = ["q": excapedText]
+        params["start_from"] = nextBatchFrom
+//        sendDataRequest(path: API.search, params: params, completion: { (feed: FeedResponseWrapped) -> Void in
+//            completion(feed.response)
+//        }, failure: failure)
+    }
+    
     private func sendDataRequest<T: Decodable>(path: String,
                                  params: [String: String],
                                  completion: @escaping (T) -> Void,

@@ -15,4 +15,5 @@ struct API {
     
     static let newsFeed = "/method/newsfeed.get"
     static let user = "/method/users.get"
+    static let search = "/method/newsfeed.search"
 }
