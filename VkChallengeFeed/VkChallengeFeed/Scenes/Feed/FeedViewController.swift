@@ -115,5 +115,13 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         interactor.revealPost(for: cellViewModel.postId)
     }
     
+    // MARK: - ScrollDelegate
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 2 {
+            interactor.getNextBatch()
+        }
+    }
+    
 }
 

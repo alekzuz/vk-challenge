@@ -24,8 +24,9 @@ final class NetworkService {
         }, failure: failure)
     }
     
-    func getFeed(completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
-        let params = ["filters": "post,photo"]
+    func getFeed(nextBatchFrom: String? = nil, completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
+        var params = ["filters": "post,photo"]
+        params["start_from"] = nextBatchFrom
         sendDataRequest(path: API.newsFeed, params: params, completion: { (feed: FeedResponseWrapped) -> Void in
             completion(feed.response)
         }, failure: failure)
@@ -40,16 +41,16 @@ final class NetworkService {
         
         var paramsWithTokenAndVerion = params
         paramsWithTokenAndVerion["access_token"] = token
-        paramsWithTokenAndVerion["version"] = API.version
+        paramsWithTokenAndVerion["v"] = API.version
         
         let url = self.url(from: path, params: paramsWithTokenAndVerion)
-        
+        print("Send request: \(url.absoluteString)")
         let dataTask = session.dataTask(with: url) { (data, response, error) in
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                    print("json \(json)")
+//                    let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//                    print("json \(json)")
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let decodedResponse = try decoder.decode(T.self, from: data)
                     DispatchQueue.main.async {
