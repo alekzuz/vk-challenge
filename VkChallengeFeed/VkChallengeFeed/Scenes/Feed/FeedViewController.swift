@@ -36,12 +36,11 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assemble()
-        setupTopBars()
         
-        table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
-        table.addSubview(refreshControl)
-        table.tableFooterView = footerView
+        assemble()
+        
+        setupTopBars()
+        setupTable()
         
         interactor.getUser()
         interactor.getFeed()
@@ -69,6 +68,19 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         self.navigationItem.titleView = titleView
+    }
+    
+    private func setupTable() {
+        let topInset: CGFloat = 8
+        if #available(iOS 11, *) {
+            table.contentInset.top = topInset
+        } else {
+            table.contentInset.top = 64 + topInset
+        }
+        
+        table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
+        table.addSubview(refreshControl)
+        table.tableFooterView = footerView
     }
     
     // MARK: - Actions

@@ -43,8 +43,6 @@
 		21C9E9262195CE340065B762 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C9E9252195CE340065B762 /* AuthViewController.storyboard */; };
 		21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */; };
 		21C9E92C2195D2EF0065B762 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92B2195D2EF0065B762 /* GradientView.swift */; };
-		21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */; };
-		21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9E92F2195E84F0065B762 /* CustomLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,8 +135,6 @@
 		21C9E9252195CE340065B762 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		21C9E92B2195D2EF0065B762 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowAndCornersLayoutAttributes.swift; sourceTree = "<group>"; };
-		21C9E92F2195E84F0065B762 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +168,26 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		09112C8E2198AA6200C9C4E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09112C832198990600C9C4E1 /* FooterView */,
+				09112C77219857C500C9C4E1 /* TitleView */,
+				09E1F92521981484004A569B /* GalleryView */,
+				09E1F9132196B4D4004A569B /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09112C8F2198AA9100C9C4E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21C9E92B2195D2EF0065B762 /* GradientView.swift */,
+				09E1F91A2196F53B004A569B /* WebImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		09E1F8AB2195598F004A569B = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +212,7 @@
 				21C9E9192195B60F0065B762 /* Services */,
 				21C9E91F2195C2240065B762 /* Scenes */,
 				21C9E92A2195CEAB0065B762 /* Helpers */,
+				09112C8F2198AA9100C9C4E1 /* Views */,
 				09E1F8BE21955992004A569B /* Assets.xcassets */,
 				09E1F8C021955992004A569B /* LaunchScreen.storyboard */,
 				09E1F8C321955992004A569B /* Info.plist */,
@@ -269,10 +286,7 @@
 		21C9E9212195C2620065B762 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				09112C832198990600C9C4E1 /* FooterView */,
-				09112C77219857C500C9C4E1 /* TitleView */,
-				09E1F92521981484004A569B /* GalleryView */,
-				09E1F9132196B4D4004A569B /* Cell */,
+				09112C8E2198AA6200C9C4E1 /* Views */,
 				09E1F8BB2195598F004A569B /* FeedViewController.storyboard */,
 				09E1F8B92195598F004A569B /* FeedViewController.swift */,
 				09E1F90D2196AFC9004A569B /* FeedInteractor.swift */,
@@ -295,10 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				21C9E9282195CE860065B762 /* UIViewController+Storyboard.swift */,
-				21C9E92B2195D2EF0065B762 /* GradientView.swift */,
-				21C9E92D2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift */,
-				21C9E92F2195E84F0065B762 /* CustomLayout.swift */,
-				09E1F91A2196F53B004A569B /* WebImageView.swift */,
 				09E1F91E219763FC004A569B /* String+Helpers.swift */,
 				09E1F92E21982097004A569B /* UIView+Nib.swift */,
 			);
@@ -442,9 +452,7 @@
 				09E1F90C21969BE9004A569B /* FeedResponse.swift in Sources */,
 				09E1F9152196B8B6004A569B /* FeedCell.swift in Sources */,
 				09E1F92D21981A4B004A569B /* GalleryItem.swift in Sources */,
-				21C9E92E2195E18D0065B762 /* ShadowAndCornersLayoutAttributes.swift in Sources */,
 				09E1F927219817F3004A569B /* GalleryView.swift in Sources */,
-				21C9E9302195E84F0065B762 /* CustomLayout.swift in Sources */,
 				09112C7C219857F200C9C4E1 /* TitleView.swift in Sources */,
 				09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */,
 				09E1F92F21982097004A569B /* UIView+Nib.swift in Sources */,
