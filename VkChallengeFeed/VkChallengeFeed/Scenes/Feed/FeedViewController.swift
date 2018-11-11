@@ -18,8 +18,15 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     private var viewModel = Feed.ViewModel.init(cells: [])
     
     @IBOutlet private var table: UITableView!
+    
     private lazy var titleView: TitleView = {
        return TitleView.loadFromNib()
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        return refreshControl
     }()
     
     override func viewDidLoad() {
@@ -28,6 +35,7 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         setupTopBars()
         
         table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
+        table.addSubview(refreshControl)
         
         interactor.getUser()
         interactor.getFeed()
@@ -57,6 +65,12 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         self.navigationItem.titleView = titleView
     }
     
+    // MARK: - Actions
+    
+    @objc private func refresh(_ refreshControl: UIRefreshControl) {
+        interactor.getFeed()
+    }
+    
     // MARK: - FeedDisplayLogic
     
     func displayUserVieModel(_ userViewModel: Feed.UserViewModel) {
@@ -66,6 +80,7 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     func displayViewModel(_ viewModel: Feed.ViewModel) {
         self.viewModel = viewModel
         table.reloadData()
+        refreshControl.endRefreshing()
     }
     
     // MARK: - UITableViewDelegate & UITableViewDataSource
