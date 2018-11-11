@@ -9,6 +9,11 @@
 import Foundation
 
 enum Feed {
+    
+    struct UserViewModel: TitleViewViewModel {
+        let photoUrlString: String?
+    }
+    
     struct ViewModel {
         struct Cell: FeedCellViewModel {
             let postId: Int

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol FeedDisplayLogic: class {
+    func displayUserVieModel(_ userViewModel: Feed.UserViewModel)
     func displayViewModel(_ viewModel: Feed.ViewModel)
 }
 
@@ -17,6 +18,9 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
     private var viewModel = Feed.ViewModel.init(cells: [])
     
     @IBOutlet private var table: UITableView!
+    private lazy var titleView: TitleView = {
+       return TitleView.loadFromNib()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,7 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         
         table.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: FeedCell.reuseId)
         
+        interactor.getUser()
         interactor.getFeed()
     }
     
@@ -49,11 +54,14 @@ final class FeedViewController: UIViewController, FeedDisplayLogic, UITableViewD
         
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        let titleView: TitleView = TitleView.loadFromNib()
         self.navigationItem.titleView = titleView
     }
     
     // MARK: - FeedDisplayLogic
+    
+    func displayUserVieModel(_ userViewModel: Feed.UserViewModel) {
+        titleView.set(userViewModel: userViewModel)
+    }
     
     func displayViewModel(_ viewModel: Feed.ViewModel) {
         self.viewModel = viewModel

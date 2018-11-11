@@ -10,6 +10,7 @@
 		09112C7C219857F200C9C4E1 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112C7B219857F200C9C4E1 /* TitleView.swift */; };
 		09112C7E2198583100C9C4E1 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09112C7D2198583100C9C4E1 /* TitleView.xib */; };
 		09112C802198600500C9C4E1 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112C7F2198600500C9C4E1 /* InsetableTextField.swift */; };
+		09112C8221986CB500C9C4E1 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09112C8121986CB500C9C4E1 /* UserResponse.swift */; };
 		09E1F8B82195598F004A569B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B72195598F004A569B /* AppDelegate.swift */; };
 		09E1F8BA2195598F004A569B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1F8B92195598F004A569B /* FeedViewController.swift */; };
 		09E1F8BD2195598F004A569B /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1F8BB2195598F004A569B /* FeedViewController.storyboard */; };
@@ -98,6 +99,7 @@
 		09112C7B219857F200C9C4E1 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		09112C7D2198583100C9C4E1 /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		09112C7F2198600500C9C4E1 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
+		09112C8121986CB500C9C4E1 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		09E1F8B42195598F004A569B /* VkChallengeFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkChallengeFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1F8B72195598F004A569B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E1F8B92195598F004A569B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				09E1F90B21969BE9004A569B /* FeedResponse.swift */,
+				09112C8121986CB500C9C4E1 /* UserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				09112C802198600500C9C4E1 /* InsetableTextField.swift in Sources */,
 				09E1F9122196B3E5004A569B /* FeedViewModels.swift in Sources */,
 				09E1F90921962D54004A569B /* API.swift in Sources */,
+				09112C8221986CB500C9C4E1 /* UserResponse.swift in Sources */,
 				09E1F90421962760004A569B /* NetworkService.swift in Sources */,
 				09E1F91B2196F53B004A569B /* WebImageView.swift in Sources */,
 				21C9E9292195CE860065B762 /* UIViewController+Storyboard.swift in Sources */,

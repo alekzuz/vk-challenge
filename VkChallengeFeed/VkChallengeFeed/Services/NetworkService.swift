@@ -16,6 +16,14 @@ final class NetworkService {
         self.authService = authService
     }
     
+    func getUser(completion: @escaping (UserResponse?) -> Void, failure: @escaping () -> Void) {
+        guard let userId = authService.userId else { return }
+        let params = ["user_ids": userId, "fields": "photo_100"]
+        sendDataRequest(path: API.user, params: params, completion: { (user: UserResponseWrapped) -> Void in
+            completion(user.response.first)
+        }, failure: failure)
+    }
+    
     func getFeed(completion: @escaping (FeedResponse) -> Void, failure: @escaping () -> Void) {
         let params = ["filters": "post,photo"]
         sendDataRequest(path: API.newsFeed, params: params, completion: { (feed: FeedResponseWrapped) -> Void in

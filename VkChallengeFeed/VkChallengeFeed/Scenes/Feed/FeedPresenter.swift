@@ -9,6 +9,7 @@
 import UIKit
 
 protocol FeedPresentationLogic: class {
+    func presentUserInfo(_ userResponse: UserResponse?)
     func presentFeed(_ feedResponse: FeedResponse, revealedPostsIds: [Int])
 }
 
@@ -23,6 +24,10 @@ final class FeedPresenter: FeedPresentationLogic {
         dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "d MMM 'в' HH:mm"
+    }
+    
+    func presentUserInfo(_ userResponse: UserResponse?) {
+        viewController.displayUserVieModel(Feed.UserViewModel.init(photoUrlString: userResponse?.photo100))
     }
     
     func presentFeed(_ feedResponse: FeedResponse, revealedPostsIds: [Int]) {

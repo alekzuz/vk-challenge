@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol TitleViewViewModel {
+    var photoUrlString: String? { get }
+}
+
 final class TitleView: UIView {
 
     @IBOutlet private var textField: UITextField!
-    @IBOutlet private var avatarView: UIImageView!
+    @IBOutlet private var avatarView: WebImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +35,10 @@ final class TitleView: UIView {
     
     override var intrinsicContentSize: CGSize {
         return UIView.layoutFittingExpandedSize
+    }
+    
+    func set(userViewModel: TitleViewViewModel) {
+        avatarView.set(imageUrl: userViewModel.photoUrlString)
     }
     
 }
