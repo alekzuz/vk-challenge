@@ -1,2 +1,3 @@
-Two days
+Two days.
+
 This was real challenge
